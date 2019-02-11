@@ -23,10 +23,10 @@ function game() {
   var alreadyGuessed = document.getElementById("alreadyGuessed");
   var lossesP = document.getElementById("losses"); //lossesP because of <p> element.  Needs to stay in a different element or new line so it can have the ID "losses"
   var winsP = document.getElementById("wins");  // ^^
-  var guessLeft = document.getElementById("guessesLeft");
+  var guessLeftP = document.getElementById("guessesLeft");
   winsP.innerHTML = wins; 
   lossesP.innerHTML = losses; // Googled the error: need to have a P because it is within a paragraph element.
-  guessLeft.innerHTML = guessesLeft;
+  guessLeftP.innerHTML = guessesLeft;
   alreadyGuessed.innerHTML = guessedLetters.join("  "); // .join learned from W3 schools.  This adds the letters to the other ones instead.  Kind of like our append tool without adding a div or like parseInt without numbers
 }
 
