@@ -16,25 +16,24 @@ document.onkeyup = function(event) { // taking user's input
   } else { // if their guess is wrong
     wrong(userGuess);
   }
-
   game();
 }
 
 function game() {
-    var alreadyGuessed = document.getElementById("alreadyGuessed");
-    var lossesP = document.getElementById("losses"); //lossesP because of <p> element
-    var winsP = document.getElementById("wins"); 
-    var guessLeft = document.getElementById("guessesLeft");
+  var alreadyGuessed = document.getElementById("alreadyGuessed");
+  var lossesP = document.getElementById("losses"); //lossesP because of <p> element.  Needs to stay in a different element or new line so it can have the ID "losses"
+  var winsP = document.getElementById("wins");  // ^^
+  var guessesLeft = document.getElementById("guessesLeft");
   winsP.innerHTML = wins; 
   lossesP.innerHTML = losses; // Googled the error: need to have a P because it is within a paragraph element.
-  guessLeft.innerHTML = guessesLeft;
+  guessesLeft.innerHTML = guessesLeft;
   alreadyGuessed.innerHTML = guessedLetters.join("  "); // .join learned from W3 schools.  This adds the letters to the other ones instead.  Kind of like our append tool without adding a div or like parseInt without numbers
 }
 
 
 function wrong(letter) { // calling function to decrement guessesLeft by 1 each time guess is wrong
-    guessesLeft--; // decrement guesses by 1
-    guessedLetters.push(letter); //.push learned from lecture
+  guessesLeft--; // decrement guesses by 1
+  guessedLetters.push(letter); //.push learned from lecture
   }
 
 function win() { //calling function for when the user wins
