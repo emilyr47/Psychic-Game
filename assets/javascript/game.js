@@ -1,6 +1,4 @@
 //errors:
-//odd message appearing under Wins and Losses
-//game won't reset until guesses are -1
 
 
 var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -15,7 +13,7 @@ document.onkeyup = function(event) { // taking user's input
   if (userGuess === answer) { // if their guess is right
     win();
     alert("You have won!");
-  } else if (guessesLeft === -1) { // if their guess is wrong and they are out of guesses
+  } else if (guessesLeft === 0) { // if their guess is wrong and they are out of guesses
     lost();
     alert("You have lost!"); 
   } else { // if their guess is wrong
@@ -27,11 +25,11 @@ document.onkeyup = function(event) { // taking user's input
 
 function game() {
     var alreadyGuessed = document.getElementById("alreadyGuessed");
-    var losses = document.getElementById("losses"); 
-    var wins = document.getElementById("wins"); 
+    var lossesP = document.getElementById("losses"); 
+    var winsP = document.getElementById("wins"); 
     var guessLeft = document.getElementById("guessesLeft");
-  wins.innerHTML = wins; // These aren't showing up right
-  losses.innerHTML = losses; // These aren't showing up right
+  winsP.innerHTML = wins; 
+  lossesP.innerHTML = losses; // Googled the error: need to have a P because it is within a paragraph element.
   guessLeft.innerHTML = guessesLeft;
   alreadyGuessed.innerHTML = guessedLetters.join("  "); // "".join learned from W3 schools.  This adds the letters to the other ones instead of having to append or not parseInt
 }
